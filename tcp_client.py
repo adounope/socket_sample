@@ -2,7 +2,10 @@ import socket
 import threading
 import src.socket_tools as skt
 
-target_addr = ('localhost', 25567)
+# target_addr = ('192.168.86.187', 25567)
+ip = input('enter target ip: ')
+port = input('enter target port: ')
+target_addr = (ip, int(port))
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 skt.tcp_connect(client_socket, target_addr)

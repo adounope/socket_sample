@@ -5,7 +5,8 @@ import src.socket_tools as skt
 # Create a TCP socket
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-port = 25567
+# port = 25567
+port = int(input('enter port to listen'))
 listen_addr = ('0.0.0.0', port)
 server_socket.bind(listen_addr) # claim local ip and port
 server_socket.listen(1)          # set socket as listening mode
